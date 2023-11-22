@@ -19,7 +19,8 @@ pipeline{
         }
         stage("Build Image"){
             steps{
-                sh 'docker build -t my-node-app2:1.0 .'
+                sh 'docker build --no-cache=false -t my-node-app2:1.0 .'
+
             }
         }
         stage('Docker Push'){
